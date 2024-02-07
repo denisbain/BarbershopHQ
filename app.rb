@@ -32,5 +32,13 @@ post '/visit' do
 		session[:barber] = params[:barber]
 		session[:color] = params[:color]
 
+		Client.create(
+			name: params[:username],
+			phone: params[:phone],
+			datestamp: params[:datetime],
+			barber: params[:barber],
+			color: params[:color]
+		)
+
 		erb "<h1> Спасибо, вы записались!</h1>"
 	end
