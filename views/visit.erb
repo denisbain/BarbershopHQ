@@ -13,21 +13,21 @@
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input  name='username' type="text" class="form-control" placeholder="Ваше имя" value="<%=session[:user_name] %>">
+    <input  name='client[name]' type="text" class="form-control" placeholder="Ваше имя" value="">
   </div>
 
   <div class="form-group">
     <label>Ваше телефон</label>
-    <input name='phone' type="text" class="form-control" placeholder="Ваш телефон" value="<%=session[:phone] %>">
+    <input name='client[phone]' type="text" class="form-control" placeholder="Ваш телефон" value="">
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input id="datetimepicker" name='datetime' type="text" class="form-control" placeholder="Введите дату и время" value="<%=session[:datetime] %>">
+    <input id="datetimepicker" name='client[datestamp]' type="text" class="form-control" placeholder="Введите дату и время" value="">
 
   </div>
 
-  <select name="barber" class="form-group">
+  <select name="client[barber]" class="form-group">
     <!-- Если барбер = Гас Фринг, true выдавать selected, если false то пустую строку. -->
     <option>Выбрать парикмахера</option>
 
@@ -40,7 +40,7 @@
 
   <div class="form-group">
     <label>В какой цвет хотите покрасить волосы?</label><br/>
-    <select id="color" name="color">
+    <select id="color" name="client[color]">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
