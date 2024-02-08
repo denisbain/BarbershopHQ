@@ -34,11 +34,15 @@ end
 
 post '/visit' do
 
-	@c = Client.new params[:client]
-	if @c.save
-		erb "<h1> Спасибо, вы записались!</h1>"
-	else
-		@error = @c.errors.full_messages.first
-		erb :visit
-	end
-	end
+		@c = Client.new params[:client]
+		if @c.save
+			erb "<h1> Спасибо, вы записались!</h1>"
+		else
+			@error = @c.errors.full_messages.first
+			erb :visit
+		end
+end
+
+get'/barber/:id' do
+	erb :barber
+end
