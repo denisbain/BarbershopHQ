@@ -26,19 +26,20 @@ get '/visit' do
 end
 
 post '/visit' do
-		session[:user_name] = params[:username]
-		session[:phone] = params[:phone]
-		session[:datetime] = params[:datetime]
-		session[:barber] = params[:barber]
-		session[:color] = params[:color]
+		@username = params[:username]
+		@phone = params[:phone]
+		@datetime = params[:datetime]
+		@barber = params[:barber]
+		@color = params[:color]
 
-		Client.create(
-			name: params[:username],
-			phone: params[:phone],
-			datestamp: params[:datetime],
-			barber: params[:barber],
-			color: params[:color]
-		)
+				c = Client.new
+				c.name =  @username
+				c.phone = @phone
+				c.datestamp = @datetime
+				c.barber = @barber
+				c.color = @color
+				c.save
+
 
 		erb "<h1> Спасибо, вы записались!</h1>"
 	end
